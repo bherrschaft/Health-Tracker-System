@@ -5,12 +5,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90571d6a-ec00-4bc7-89fc-405b1f160924" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CalorieIntake.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DataManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ExerciseActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/HealthAnalyzer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/HealthApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SleepRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "bherrschaft"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/bherrschaft/Health-Tracker-System.git",
+    "accountId": "17652637-fd1e-4289-9ad4-a687bc64e8ab"
+  }
+}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/DataManager.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/HealthApp.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 2
@@ -23,12 +60,42 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.HealthApp.executor": "Run",
+    "Application.SQLiteTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="Application.HealthApp">
+    <configuration name="HealthApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HealthApp" />
+      <module name="Health-Tracker-System" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SQLiteTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SQLiteTest" />
+      <module name="Health-Tracker-System" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HealthApp" />
+        <item itemvalue="Application.SQLiteTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -45,7 +112,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723135731823</updated>
-      <workItem from="1723135732890" duration="3000" />
+      <workItem from="1723135732890" duration="9543000" />
     </task>
     <servers />
   </component>
