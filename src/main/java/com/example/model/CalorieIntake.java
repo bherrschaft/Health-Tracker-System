@@ -1,9 +1,8 @@
-import java.io.Serializable;
+package com.example.model;
+
 import java.time.LocalDate;
 
-public class CalorieIntake implements Serializable {
-    private static final long serialVersionUID = 1L;
-
+public class CalorieIntake {
     private String foodItem;
     private int calories;
     private LocalDate date;
@@ -24,10 +23,5 @@ public class CalorieIntake implements Serializable {
 
     public LocalDate getDate() {
         return date;
-    }
-
-    @Override
-    public String toString() {
-        return "Food: " + foodItem + ", Calories: " + calories + ", Date: " + date;
     }
 }

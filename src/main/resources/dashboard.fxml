@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.DashboardController" alignment="CENTER" spacing="10" style="-fx-padding: 20;">
+    <Label fx:id="welcomeLabel" text="Welcome to the Dashboard!" style="-fx-font-size: 18px;"/>
+
+    <TextField fx:id="foodItemField" promptText="Food Item"/>
+    <TextField fx:id="caloriesField" promptText="Calories"/>
+    <DatePicker fx:id="dateField"/>
+    <Button text="Add Calorie Intake" onAction="#handleAddCalorieIntake"/>
+
+    <TextField fx:id="exerciseTypeField" promptText="Exercise Type"/>
+    <TextField fx:id="exerciseDurationField" promptText="Duration (mins)"/>
+    <TextField fx:id="exerciseCaloriesField" promptText="Calories Burned"/>
+    <DatePicker fx:id="exerciseDateField"/>
+    <Button text="Add Exercise Activity" onAction="#handleAddExerciseActivity"/>
+
+    <TextField fx:id="sleepTimeField" promptText="Sleep Time (HH:mm)"/>
+    <TextField fx:id="wakeTimeField" promptText="Wake Time (HH:mm)"/>
+    <DatePicker fx:id="sleepDateField"/>
+    <Button text="Add Sleep Record" onAction="#handleAddSleepRecord"/>
+
+    <Button text="View Analysis" onAction="#handleViewAnalysis"/>
+    <TextArea fx:id="analysisArea" editable="false"/>
+
+    <Button text="Log Out" onAction="#handleLogout"/>
+</VBox>

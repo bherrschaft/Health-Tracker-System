@@ -5,7 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90571d6a-ec00-4bc7-89fc-405b1f160924" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_8_8_2024_8_35_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_8_8_2024_8_37_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_8_8_2024_8_37_PM_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_8_8_2024_8_37_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/DashboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/data/DatabaseConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dashboard.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/login.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CalorieIntake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/CalorieIntake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/data/DataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ExerciseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/ExerciseActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/HealthAnalyzer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/HealthApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/HealthTrackerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/HealthTrackerApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SleepRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/SleepRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UserManager.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +42,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -36,8 +63,8 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/pom.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/DataManager.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/HealthApp.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/data/DataManager.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/data/DatabaseConnection.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -55,7 +82,7 @@
     "Application.SQLiteTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "javafx-integration",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Program Files/javafx-sdk-17.0.12/lib/javafx-swt.jar",
     "node.js.detected.package.eslint": "true",
@@ -78,7 +105,7 @@
       </method>
     </configuration>
     <configuration name="HealthTrackerApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HealthTrackerApp" />
+      <option name="MAIN_CLASS_NAME" value="com.example.HealthTrackerApp" />
       <module name="Health-Tracker-System" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -94,8 +121,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.HealthApp" />
-        <item itemvalue="Application.HealthTrackerApp" />
         <item itemvalue="Application.SQLiteTest" />
+        <item itemvalue="Application.HealthTrackerApp" />
+        <item itemvalue="Application.HealthApp" />
+        <item itemvalue="Application.HealthTrackerApp" />
       </list>
     </recent_temporary>
   </component>

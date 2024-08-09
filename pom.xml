@@ -69,7 +69,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>HealthTrackerApp</mainClass> <!-- Ensure this matches your main class -->
+                    <mainClass>com.example.HealthTrackerApp</mainClass> <!-- Ensure this matches your main class -->
                 </configuration>
             </plugin>
         </plugins>

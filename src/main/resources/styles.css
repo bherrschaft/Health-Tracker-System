@@ -1,0 +1,22 @@
+.button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-padding: 8px 15px;
+    -fx-font-size: 14px;
+}
+
+.text-field {
+    -fx-background-color: #f0f0f0;
+    -fx-border-color: #ddd;
+    -fx-padding: 5px;
+}
+
+.label {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.text-area {
+    -fx-font-family: "Courier New", monospace;
+    -fx-font-size: 12px;
+}
