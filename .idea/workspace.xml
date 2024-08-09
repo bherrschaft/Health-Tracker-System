@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90571d6a-ec00-4bc7-89fc-405b1f160924" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/HealthTrackerApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HealthAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HealthAnalyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HealthApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HealthApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SleepRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SleepRecord.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +116,7 @@
       <option name="presentableId" value="Default" />
       <updated>1723135731823</updated>
       <workItem from="1723135732890" duration="9543000" />
-      <workItem from="1723150171320" duration="8832000" />
+      <workItem from="1723150171320" duration="9640000" />
     </task>
     <servers />
   </component>
