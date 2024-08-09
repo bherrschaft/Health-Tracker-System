@@ -5,6 +5,38 @@ import java.util.stream.Collectors;
 
 public class HealthAnalyzer {
 
+    // Calculate average caloric balance over a date range
+    public double calculateCaloricBalanceOverPeriod(List<CalorieIntake> calorieIntakes, List<ExerciseActivity> exercises, LocalDate startDate, LocalDate endDate) {
+        int totalCaloricBalance = calorieIntakes.stream()
+                .filter(c -> !c.getDate().isBefore(startDate) && !c.getDate().isAfter(endDate))
+                .mapToInt(c -> calculateDailyCaloricBalance(calorieIntakes, exercises, c.getDate()))
+                .sum();
+
+        long daysCount = calorieIntakes.stream()
+                .filter(c -> !c.getDate().isBefore(startDate) && !c.getDate().isAfter(endDate))
+                .map(CalorieIntake::getDate)
+                .distinct()
+                .count();
+
+        return daysCount == 0 ? 0 : (double) totalCaloricBalance / daysCount;
+    }
+
+    // Calculate average sleep over a date range
+    public double calculateAverageSleepOverPeriod(List<SleepRecord> sleepRecords, LocalDate startDate, LocalDate endDate) {
+        List<SleepRecord> filteredRecords = sleepRecords.stream()
+                .filter(s -> !s.getDate().isBefore(startDate) && !s.getDate().isAfter(endDate))
+                .collect(Collectors.toList());
+
+        double totalSleepHours = filteredRecords.stream()
+                .mapToDouble(SleepRecord::calculateSleepHours)
+                .sum();
+
+        long daysCount = filteredRecords.size();
+
+        return daysCount == 0 ? 0 : totalSleepHours / daysCount;
+    }
+
+    // Existing method to calculate daily caloric balance
     public int calculateDailyCaloricBalance(List<CalorieIntake> calorieIntakes, List<ExerciseActivity> exercises, LocalDate date) {
         int caloriesConsumed = calorieIntakes.stream()
                 .filter(c -> c.getDate().equals(date))
@@ -19,15 +51,8 @@ public class HealthAnalyzer {
         return caloriesConsumed - caloriesBurned;
     }
 
-    public double calculateAverageSleep(List<SleepRecord> sleepRecords) {
-        return sleepRecords.stream()
-                .mapToDouble(SleepRecord::calculateSleepHours)
-                .average()
-                .orElse(0.0);
-    }
-
+    // Existing method to generate health summary
     public void generateHealthSummary(List<CalorieIntake> calorieIntakes, List<ExerciseActivity> exercises, List<SleepRecord> sleepRecords, LocalDate startDate, LocalDate endDate) {
-        // Filter records by the specified date range
         List<CalorieIntake> filteredCalorieIntakes = calorieIntakes.stream()
                 .filter(intake -> !intake.getDate().isBefore(startDate) && !intake.getDate().isAfter(endDate))
                 .collect(Collectors.toList());
@@ -37,9 +62,9 @@ public class HealthAnalyzer {
                 .collect(Collectors.toList());
 
         List<SleepRecord> filteredSleepRecords = sleepRecords.stream()
-                .collect(Collectors.toList()); // Sleep records currently do not have a date; you can add a date if needed
+                .filter(s -> !s.getDate().isBefore(startDate) && !s.getDate().isAfter(endDate))
+                .collect(Collectors.toList());
 
-        // Calculate totals and averages
         int totalCaloriesConsumed = filteredCalorieIntakes.stream()
                 .mapToInt(CalorieIntake::getCalories)
                 .sum();
@@ -62,7 +87,6 @@ public class HealthAnalyzer {
                 .map(Map.Entry::getKey)
                 .orElse("None");
 
-        // Print the summary
         System.out.println("Health Summary for period " + startDate + " to " + endDate + ":");
         System.out.println("Total Calories Consumed: " + totalCaloriesConsumed);
         System.out.println("Total Calories Burned: " + totalCaloriesBurned);
@@ -71,8 +95,9 @@ public class HealthAnalyzer {
         System.out.println("Most Common Exercise: " + mostCommonExercise);
     }
 
-    public String suggestExercise(int caloricBalance, double averageSleep) {
-        if (caloricBalance > 0) {
+    // Existing method to suggest exercises
+    public String suggestExercise(double averageCaloricBalance, double averageSleep) {
+        if (averageCaloricBalance > 0) {
             if (averageSleep < 7) {
                 return "Consider low-impact exercises like walking or yoga to balance energy.";
             } else {

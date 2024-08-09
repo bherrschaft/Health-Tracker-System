@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.Duration;
 
@@ -7,25 +8,24 @@ public class SleepRecord implements Serializable {
 
     private LocalTime sleepTime;
     private LocalTime wakeTime;
+    private LocalDate date;  // Add date attribute
 
-    public SleepRecord(LocalTime sleepTime, LocalTime wakeTime) {
+    public SleepRecord(LocalTime sleepTime, LocalTime wakeTime, LocalDate date) {
         this.sleepTime = sleepTime;
         this.wakeTime = wakeTime;
+        this.date = date;  // Initialize date
     }
 
     public double calculateSleepHours() {
-        // Calculate total sleep minutes
         long sleepMinutes;
         if (wakeTime.isBefore(sleepTime) || wakeTime.equals(sleepTime)) {
-            // Handle overnight sleep
-            sleepMinutes = Duration.between(sleepTime, LocalTime.MAX).toMinutes() + 1; // Minutes till midnight
-            sleepMinutes += Duration.between(LocalTime.MIN, wakeTime).toMinutes(); // Minutes from midnight
+            sleepMinutes = Duration.between(sleepTime, LocalTime.MAX).toMinutes() + 1;
+            sleepMinutes += Duration.between(LocalTime.MIN, wakeTime).toMinutes();
         } else {
-            // Handle normal sleep within the same day
             sleepMinutes = Duration.between(sleepTime, wakeTime).toMinutes();
         }
 
-        return sleepMinutes / 60.0; // Convert minutes to hours
+        return sleepMinutes / 60.0;
     }
 
     public LocalTime getSleepTime() {
@@ -36,8 +36,12 @@ public class SleepRecord implements Serializable {
         return wakeTime;
     }
 
+    public LocalDate getDate() {  // Getter for date
+        return date;
+    }
+
     @Override
     public String toString() {
-        return "Sleep Time: " + sleepTime + ", Wake Time: " + wakeTime;
+        return "Date: " + date + ", Sleep Time: " + sleepTime + ", Wake Time: " + wakeTime;
     }
 }

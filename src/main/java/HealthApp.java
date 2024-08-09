@@ -20,8 +20,9 @@ public class HealthApp {
             System.out.println("2. Log In");
             System.out.println("3. Input Data");
             System.out.println("4. View Analysis");
-            System.out.println("5. Log Out");
-            System.out.println("6. Exit");
+            System.out.println("5. Get Exercise Suggestions");
+            System.out.println("6. Log Out");
+            System.out.println("7. Exit");
             System.out.print("Choose an option: ");
 
             int choice = scanner.nextInt();
@@ -81,13 +82,16 @@ public class HealthApp {
                                 dataManager.insertExerciseActivity(currentUserId, exercise);
                                 break;
                             case 3: // Input sleep record
+                                System.out.print("Enter sleep date (yyyy-mm-dd): ");  // Prompt for date
+                                String sleepDateStr = scanner.next();
+                                LocalDate sleepDate = LocalDate.parse(sleepDateStr);
                                 System.out.print("Enter sleep time (HH:mm): ");
                                 String sleepTimeStr = scanner.next();
                                 LocalTime sleepTime = LocalTime.parse(sleepTimeStr);
                                 System.out.print("Enter wake time (HH:mm): ");
                                 String wakeTimeStr = scanner.next();
                                 LocalTime wakeTime = LocalTime.parse(wakeTimeStr);
-                                SleepRecord sleepRecord = new SleepRecord(sleepTime, wakeTime);
+                                SleepRecord sleepRecord = new SleepRecord(sleepTime, wakeTime, sleepDate);
                                 dataManager.insertSleepRecord(currentUserId, sleepRecord);
                                 break;
                             default:
@@ -118,8 +122,15 @@ public class HealthApp {
                                 System.out.println("Caloric Balance for " + date + ": " + caloricBalance);
                                 break;
                             case 2: // View average sleep
+                                System.out.print("Enter start date (yyyy-mm-dd): ");
+                                String sleepStartDateStr = scanner.next();
+                                LocalDate sleepStartDate = LocalDate.parse(sleepStartDateStr);
+                                System.out.print("Enter end date (yyyy-mm-dd): ");
+                                String sleepEndDateStr = scanner.next();
+                                LocalDate sleepEndDate = LocalDate.parse(sleepEndDateStr);
+
                                 List<SleepRecord> sleepRecords = dataManager.getSleepRecords(currentUserId);
-                                double averageSleep = healthAnalyzer.calculateAverageSleep(sleepRecords);
+                                double averageSleep = healthAnalyzer.calculateAverageSleepOverPeriod(sleepRecords, sleepStartDate, sleepEndDate);
                                 System.out.println("Average Sleep: " + averageSleep + " hours");
                                 break;
                             case 3: // View exercise log
@@ -128,10 +139,17 @@ public class HealthApp {
                                 exerciseLog.forEach(System.out::println);
                                 break;
                             case 4: // View health summary
+                                System.out.print("Enter start date (yyyy-mm-dd): ");
+                                String startDateStr = scanner.next();
+                                LocalDate startDate = LocalDate.parse(startDateStr);
+                                System.out.print("Enter end date (yyyy-mm-dd): ");
+                                String endDateStr = scanner.next();
+                                LocalDate endDate = LocalDate.parse(endDateStr);
+
                                 calorieIntakes = dataManager.getCalorieIntakes(currentUserId);
                                 exercises = dataManager.getExerciseActivities(currentUserId);
                                 sleepRecords = dataManager.getSleepRecords(currentUserId);
-                                healthAnalyzer.generateHealthSummary(calorieIntakes, exercises, sleepRecords);
+                                healthAnalyzer.generateHealthSummary(calorieIntakes, exercises, sleepRecords, startDate, endDate);
                                 break;
                             default:
                                 System.out.println("Invalid option. Please try again.");
@@ -141,7 +159,32 @@ public class HealthApp {
                         System.out.println("Please log in to view analysis.");
                     }
                     break;
-                case 5: // Log out
+                case 5: // Get exercise suggestions
+                    if (currentUserId != null) {
+                        System.out.print("Enter start date (yyyy-mm-dd) for analysis: ");
+                        String startDateStr = scanner.next();
+                        LocalDate startDate = LocalDate.parse(startDateStr);
+
+                        System.out.print("Enter end date (yyyy-mm-dd) for analysis: ");
+                        String endDateStr = scanner.next();
+                        LocalDate endDate = LocalDate.parse(endDateStr);
+
+                        List<CalorieIntake> calorieIntakes = dataManager.getCalorieIntakes(currentUserId);
+                        List<ExerciseActivity> exercises = dataManager.getExerciseActivities(currentUserId);
+                        List<SleepRecord> sleepRecords = dataManager.getSleepRecords(currentUserId);
+
+                        // Calculate averages over the selected period
+                        double averageCaloricBalance = healthAnalyzer.calculateCaloricBalanceOverPeriod(calorieIntakes, exercises, startDate, endDate);
+                        double averageSleep = healthAnalyzer.calculateAverageSleepOverPeriod(sleepRecords, startDate, endDate);
+
+                        // Get exercise suggestion based on averages
+                        String exerciseSuggestion = healthAnalyzer.suggestExercise(averageCaloricBalance, averageSleep);
+                        System.out.println("Exercise Suggestion: " + exerciseSuggestion);
+                    } else {
+                        System.out.println("Please log in to get exercise suggestions.");
+                    }
+                    break;
+                case 6: // Log out
                     if (currentUserId != null) {
                         currentUserId = null;
                         System.out.println("Successfully logged out.");
@@ -149,7 +192,7 @@ public class HealthApp {
                         System.out.println("No user is currently logged in.");
                     }
                     break;
-                case 6: // Exit application
+                case 7: // Exit application
                     running = false;
                     System.out.println("Exiting application. Goodbye!");
                     break;
