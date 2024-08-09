@@ -1,0 +1,124 @@
+Index: src/main/java/HealthTrackerApp.java
+===================================================================
+diff --git a/src/main/java/HealthTrackerApp.java b/src/main/java/HealthTrackerApp.java
+deleted file mode 100644
+--- a/src/main/java/HealthTrackerApp.java	(revision c15db2a4dd6a462d22970b505ec1c22739df580f)
++++ /dev/null	(revision c15db2a4dd6a462d22970b505ec1c22739df580f)
+@@ -1,48 +0,0 @@
+-import javafx.application.Application;
+-import javafx.scene.Scene;
+-import javafx.scene.control.Button;
+-import javafx.scene.control.Label;
+-import javafx.scene.control.TextField;
+-import javafx.scene.layout.GridPane;
+-import javafx.stage.Stage;
+-
+-public class HealthTrackerApp extends Application {
+-
+-    @Override
+-    public void start(Stage primaryStage) {
+-        // Create layout
+-        GridPane grid = new GridPane();
+-        grid.setHgap(10);
+-        grid.setVgap(10);
+-
+-        // Create UI components
+-        Label usernameLabel = new Label("Username:");
+-        TextField usernameField = new TextField();
+-
+-        Button loginButton = new Button("Log In");
+-        loginButton.setOnAction(e -> {
+-            String username = usernameField.getText();
+-            if (username.isEmpty()) {
+-                System.out.println("Please enter a username.");
+-            } else {
+-                // Handle login logic
+-                System.out.println("Logged in as: " + username);
+-            }
+-        });
+-
+-        // Add components to the grid
+-        grid.add(usernameLabel, 0, 0);
+-        grid.add(usernameField, 1, 0);
+-        grid.add(loginButton, 1, 1);
+-
+-        // Create and set the scene
+-        Scene scene = new Scene(grid, 400, 200);
+-        primaryStage.setTitle("Health and Wellness Tracker");
+-        primaryStage.setScene(scene);
+-        primaryStage.show();
+-    }
+-
+-    public static void main(String[] args) {
+-        launch(args);
+-    }
+-}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"90571d6a-ec00-4bc7-89fc-405b1f160924\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/HealthTrackerApp.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Database.db\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pom.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/pom.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/DataManager.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/DataManager.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/HealthAnalyzer.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/HealthAnalyzer.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/HealthApp.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/HealthApp.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/SleepRecord.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/SleepRecord.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;bherrschaft&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/bherrschaft/Health-Tracker-System.git&quot;,\r\n    &quot;accountId&quot;: &quot;17652637-fd1e-4289-9ad4-a687bc64e8ab&quot;\r\n  }\r\n}</component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/pom.xml\" root0=\"SKIP_INSPECTION\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/DataManager.java\" root0=\"SKIP_INSPECTION\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/HealthApp.java\" root0=\"SKIP_INSPECTION\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 2\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2kNtBoZV2RNh4Axz9WdNe3V2fRU\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.HealthApp.executor\": \"Run\",\r\n    \"Application.HealthTrackerApp.executor\": \"Run\",\r\n    \"Application.SQLiteTest.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Program Files/javafx-sdk-17.0.12/lib/javafx-swt.jar\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"project.structure.last.edited\": \"Modules\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.0\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RunManager\" selected=\"Application.HealthApp\">\r\n    <configuration name=\"HealthApp\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"HealthApp\" />\r\n      <module name=\"Health-Tracker-System\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"HealthTrackerApp\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"HealthTrackerApp\" />\r\n      <module name=\"Health-Tracker-System\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"SQLiteTest\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"SQLiteTest\" />\r\n      <module name=\"Health-Tracker-System\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.HealthApp\" />\r\n        <item itemvalue=\"Application.HealthTrackerApp\" />\r\n        <item itemvalue=\"Application.SQLiteTest\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62\" />\r\n        <option value=\"bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"90571d6a-ec00-4bc7-89fc-405b1f160924\" name=\"Changes\" comment=\"\" />\r\n      <created>1723135731823</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1723135731823</updated>\r\n      <workItem from=\"1723135732890\" duration=\"9543000\" />\r\n      <workItem from=\"1723150171320\" duration=\"8832000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision c15db2a4dd6a462d22970b505ec1c22739df580f)
++++ b/.idea/workspace.xml	(date 1723163597473)
+@@ -55,27 +55,27 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Application.HealthApp.executor": "Run",
+-    "Application.HealthTrackerApp.executor": "Run",
+-    "Application.SQLiteTest.executor": "Run",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "git-widget-placeholder": "master",
+-    "kotlin-language-version-configured": "true",
+-    "last_opened_file_path": "C:/Program Files/javafx-sdk-17.0.12/lib/javafx-swt.jar",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "project.structure.last.edited": "Modules",
+-    "project.structure.proportion": "0.15",
+-    "project.structure.side.proportion": "0.0",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Application.HealthApp.executor&quot;: &quot;Run&quot;,
++    &quot;Application.HealthTrackerApp.executor&quot;: &quot;Run&quot;,
++    &quot;Application.SQLiteTest.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/javafx-sdk-17.0.12/lib/javafx-swt.jar&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RunManager" selected="Application.HealthApp">
+     <configuration name="HealthApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="HealthApp" />
+@@ -101,8 +101,10 @@
+     <recent_temporary>
+       <list>
+         <item itemvalue="Application.HealthApp" />
++        <item itemvalue="Application.SQLiteTest" />
+         <item itemvalue="Application.HealthTrackerApp" />
+         <item itemvalue="Application.SQLiteTest" />
++        <item itemvalue="Application.HealthTrackerApp" />
+       </list>
+     </recent_temporary>
+   </component>
